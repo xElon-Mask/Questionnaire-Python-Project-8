@@ -7,6 +7,23 @@
 6 - et une troisième, et une quatrième
 """
 
+# poser_question(question, r1, r2, r3, r4, choix_bonne_reponse)
+def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
+    print("Question : Quelle est la capitale de", pays, "?")
+    print("a -", r1)
+    print("b -", r2)
+    print("c -", r3)
+    print("d -", r4)
+    rep_user = input("Votre réponse :")
+
+    if bonne_reponse == rep_user:
+        print("Bonne réponse !")
+    else:
+        print("Mauvaise réponse.")
+
+
+"""
+
 print("Question : Quelle est la capitale de la France ?")
 print("a - Marseille")
 print("b - Nice")
@@ -69,3 +86,7 @@ if reponse_cap_suisse == rep_user:
     print("Bonne réponse !")
 else:
     print("Mauvaise réponse.")
+
+"""
+
+poser_question("France", "Marseille", "Nice", "Paris", "Nantes", "c")
