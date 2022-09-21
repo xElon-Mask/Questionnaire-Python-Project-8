@@ -14,9 +14,25 @@ print("c - Paris")
 print("d - Nantes")
 rep_user = input("Votre réponse :")
 
-reponse = "c"
+reponse_cap_france = "c"
 
-if reponse == rep_user:
+if reponse_cap_france == rep_user:
+    print("Bonne réponse !")
+else:
+    print("Mauvaise réponse.")
+
+print()
+
+print("Question : Quelle est la capitale de l'Italie ?")
+print("a - Rome")
+print("b - Florence")
+print("c - Naples")
+print("d - Vérone")
+rep_user = input("Votre réponse :")
+
+reponse_cap_italie = "a"
+
+if reponse_cap_italie == rep_user:
     print("Bonne réponse !")
 else:
     print("Mauvaise réponse.")
