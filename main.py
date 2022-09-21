@@ -36,3 +36,20 @@ if reponse_cap_italie == rep_user:
     print("Bonne réponse !")
 else:
     print("Mauvaise réponse.")
+
+
+print()
+
+print("Question : Quelle est la capitale du Portugal ?")
+print("a - Sintra")
+print("b - Evora")
+print("c - Lagos")
+print("d - Lisbonne")
+rep_user = input("Votre réponse :")
+
+reponse_cap_italie = "a"
+
+if reponse_cap_italie == rep_user:
+    print("Bonne réponse !")
+else:
+    print("Mauvaise réponse.")
