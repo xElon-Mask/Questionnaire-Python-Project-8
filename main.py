@@ -9,6 +9,7 @@
 
 # poser_question(question, r1, r2, r3, r4, choix_bonne_reponse)
 def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
+    global score
     print("Question : Quelle est la capitale de", pays, "?")
     print("a -", r1)
     print("b -", r2)
@@ -18,12 +19,16 @@ def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
 
     if bonne_reponse == rep_user:
         print("Bonne réponse !")
+        score += 1
     else:
         print("Mauvaise réponse.")
     print()
 
+score = 0
 
 poser_question("France", "Marseille", "Nice", "Paris", "Nantes", "c")
 poser_question("Italie", "Rome", "Florence", "Naples", "Vérone", "a")
 poser_question("Portugal", "Sintra", "Evora", "Lagos", "Lisbonne", "d")
 poser_question("Suisse", "Genève", "Berne", "Lausanne", "Zurich", "b")
+
+print("Score final :", score)
