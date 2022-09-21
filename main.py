@@ -13,3 +13,10 @@ print("b - Nice")
 print("c - Paris")
 print("d - Nantes")
 rep_user = input("Votre réponse :")
+
+reponse = "c"
+
+if reponse == rep_user:
+    print("Bonne réponse !")
+else:
+    print("Mauvaise réponse.")
