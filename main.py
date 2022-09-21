@@ -20,73 +20,10 @@ def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
         print("Bonne réponse !")
     else:
         print("Mauvaise réponse.")
+    print()
 
-
-"""
-
-print("Question : Quelle est la capitale de la France ?")
-print("a - Marseille")
-print("b - Nice")
-print("c - Paris")
-print("d - Nantes")
-rep_user = input("Votre réponse :")
-
-reponse_cap_france = "c"
-
-if reponse_cap_france == rep_user:
-    print("Bonne réponse !")
-else:
-    print("Mauvaise réponse.")
-
-print()
-
-print("Question : Quelle est la capitale de l'Italie ?")
-print("a - Rome")
-print("b - Florence")
-print("c - Naples")
-print("d - Vérone")
-rep_user = input("Votre réponse :")
-
-reponse_cap_italie = "a"
-
-if reponse_cap_italie == rep_user:
-    print("Bonne réponse !")
-else:
-    print("Mauvaise réponse.")
-
-
-print()
-
-print("Question : Quelle est la capitale du Portugal ?")
-print("a - Sintra")
-print("b - Evora")
-print("c - Lagos")
-print("d - Lisbonne")
-rep_user = input("Votre réponse :")
-
-reponse_cap_portugal = "d"
-
-if reponse_cap_portugal == rep_user:
-    print("Bonne réponse !")
-else:
-    print("Mauvaise réponse.")
-
-print()
-
-print("Question : Quelle est la capitale de la Suisse ?")
-print("a - Genève")
-print("b - Berne")
-print("c - Lausanne")
-print("d - Zurich")
-rep_user = input("Votre réponse :")
-
-reponse_cap_suisse = "b"
-
-if reponse_cap_suisse == rep_user:
-    print("Bonne réponse !")
-else:
-    print("Mauvaise réponse.")
-
-"""
 
 poser_question("France", "Marseille", "Nice", "Paris", "Nantes", "c")
+poser_question("Italie", "Rome", "Florence", "Naples", "Vérone", "a")
+poser_question("Portugal", "Sintra", "Evora", "Lagos", "Lisbonne", "d")
+poser_question("Suisse", "Genève", "Berne", "Lausanne", "Zurich", "b")
