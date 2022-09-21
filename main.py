@@ -47,9 +47,25 @@ print("c - Lagos")
 print("d - Lisbonne")
 rep_user = input("Votre réponse :")
 
-reponse_cap_italie = "a"
+reponse_cap_portugal = "d"
 
-if reponse_cap_italie == rep_user:
+if reponse_cap_portugal == rep_user:
+    print("Bonne réponse !")
+else:
+    print("Mauvaise réponse.")
+
+print()
+
+print("Question : Quelle est la capitale de la Suisse ?")
+print("a - Genève")
+print("b - Berne")
+print("c - Lausanne")
+print("d - Zurich")
+rep_user = input("Votre réponse :")
+
+reponse_cap_suisse = "b"
+
+if reponse_cap_suisse == rep_user:
     print("Bonne réponse !")
 else:
     print("Mauvaise réponse.")
