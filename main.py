@@ -12,10 +12,12 @@ def poser_question(question):
     global score
     print("QUESTION")
     print(" " + question[0])
-    print(question[1][0])
-    print(question[1][1])
-    print(question[1][2])
-    print(question[1][3])
+    for rep_pos in question[1]:
+        print(rep_pos)
+    # print(question[1][0])
+    # print(question[1][1])
+    # print(question[1][2])
+    # print(question[1][3])
     rep_user = input("Votre réponse :")
 
     if question[2].lower() == rep_user:
