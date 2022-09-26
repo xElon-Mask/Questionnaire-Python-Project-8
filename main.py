@@ -7,17 +7,18 @@
 6 - et une troisième, et une quatrième
 """
 
-# poser_question(question, r1, r2, r3, r4, choix_bonne_reponse)
-def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
+# poser_question(titre_question, r1, r2, r3, r4, choix_bonne_reponse)
+def poser_question(question):
     global score
-    print("Question : Quelle est la capitale de", pays, "?")
-    print("a -", r1)
-    print("b -", r2)
-    print("c -", r3)
-    print("d -", r4)
+    print("QUESTION")
+    print(" " + question[0])
+    print(question[1][0])
+    print(question[1][1])
+    print(question[1][2])
+    print(question[1][3])
     rep_user = input("Votre réponse :")
 
-    if bonne_reponse == rep_user:
+    if question[2].lower() == rep_user:
         print("Bonne réponse !")
         score += 1
     else:
@@ -26,9 +27,13 @@ def poser_question(pays, r1, r2, r3, r4, bonne_reponse):
 
 score = 0
 
-poser_question("France", "Marseille", "Nice", "Paris", "Nantes", "c")
-poser_question("Italie", "Rome", "Florence", "Naples", "Vérone", "a")
-poser_question("Portugal", "Sintra", "Evora", "Lagos", "Lisbonne", "d")
-poser_question("Suisse", "Genève", "Berne", "Lausanne", "Zurich", "b")
+
+question1 = ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes"), "Paris")
+question2 = ("Quelle est la capitale de l'Italie ?", ("Rome", "Florence", "Naples", "Vérone"), "Rome" )
+
+poser_question(question1)
+poser_question(question2)
+#poser_question("Portugal", "Sintra", "Evora", "Lagos", "Lisbonne", "d")
+#poser_question("Suisse", "Genève", "Berne", "Lausanne", "Zurich", "b")
 
 print("Score final :", score)
