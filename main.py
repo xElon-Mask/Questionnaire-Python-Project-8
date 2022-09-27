@@ -6,6 +6,19 @@
 5 - Ensuite, on passe à la 2eme question : Quelle est la capitale de l'Italie ?
 6 - et une troisième, et une quatrième
 """
+def demander_reponse_numerique_utilisateur(min, max):
+    rep_user_str = input("Votre réponse (entre " + str(min) + " et " + str(max) + "):")
+    try:
+        rep_user_int = int(rep_user_str)
+        if min <= rep_user_int <= max:
+            return rep_user_int
+
+        print("ERREUR: Vous devez rentrer un nombre entre", min, "et", max)
+    except:
+        print("ERREUR: Veuillez rentrer uniquement des chiffres")
+    return demander_reponse_numerique_utilisateur(min, max)
+    
+
 
 # poser_question(titre_question, r1, r2, r3, r4, choix_bonne_reponse)
 def poser_question(question):
@@ -14,8 +27,8 @@ def poser_question(question):
     print(" " + question[0])
     for rep_pos in range(len(question[1])):
         print(rep_pos +1, "-", question[1][rep_pos])
-    rep_user_str = input("Votre réponse (entre 1 et " + str(len(question[1])) + "):")
-    rep_user_int = int(rep_user_str)
+   
+    rep_user_int = demander_reponse_numerique_utilisateur(1, len(question[1]))
     if question[1][rep_user_int-1] == question[2]:
         print("Bonne réponse !")
         score += 1
