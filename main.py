@@ -22,29 +22,41 @@ def demander_reponse_numerique_utilisateur(min, max):
 
 # poser_question(titre_question, r1, r2, r3, r4, choix_bonne_reponse)
 def poser_question(question):
-    global score
     print("QUESTION")
     print(" " + question[0])
     for rep_pos in range(len(question[1])):
         print(rep_pos +1, "-", question[1][rep_pos])
    
+    print()
+    resultat_response_correcte = False
     rep_user_int = demander_reponse_numerique_utilisateur(1, len(question[1]))
     if question[1][rep_user_int-1] == question[2]:
         print("Bonne réponse !")
-        score += 1
+        resultat_response_correcte = True
     else:
         print("Mauvaise réponse.")
+
     print()
+    return resultat_response_correcte
 
-score = 0
 
 
-question1 = ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes"), "Paris")
-question2 = ("Quelle est la capitale de l'Italie ?", ("Rome", "Florence", "Naples", "Vérone"), "Rome" )
+def lancer_questionnaire(questionnaire):
+    score = 0
+    for question in questionnaire:
+        if poser_question(question):
+        # sous entendu if poser_question(question) == True:
+            score += 1
+    print("Score final :", score, "sur", len(questionnaire))
 
-poser_question(question1)
-poser_question(question2)
-#poser_question("Portugal", "Sintra", "Evora", "Lagos", "Lisbonne", "d")
-#poser_question("Suisse", "Genève", "Berne", "Lausanne", "Zurich", "b")
 
-print("Score final :", score)
+questionnaire = (
+    ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes"), "Paris"),
+    ("Quelle est la capitale de l'Italie ?", ("Rome", "Florence", "Naples", "Vérone"), "Rome" ),
+    ("Quelle est la capitale du Portugal ?", ("Sintra", "Evora", "Lagos", "Lisbonne"), "Lisbonne"),
+    ("Quelle est la capitale de la Suisse ?", ("Genève", "Berne", "Lausanne", "Zurich"), "Berne")
+                )
+
+
+lancer_questionnaire(questionnaire)
+
