@@ -1,20 +1,22 @@
-# LES FONCTIONS : PROJET QUESTIONNAIRE
-#
-# Question : Quelle est la capitale de la France ?
-# (a) Marseille
-# (b) Nice
-# (c) Paris
-# (d) Nantes
-#
-# Votre réponse :
-# Bonne réponse / Mauvaise réponse
+# PROJET QUESTIONNAIRE V3 : POO
+# 
+# - Pratiquer sur la POO
+# - Travailler sur du code existant
+# - Mener un raisonnement
 
-# ...
-# Question : Quelle est la capitale de l'Italie ?
-# ...
+# => Définir les entités (données, actions)
+# Ecrire peut être cette classe là ; elle possédera ces champs là, ces différentes méthodes, etc.
 #
-# 4 questions
-
+# Question
+#   - titre             - str
+#   - choix             - (str)
+#   - bonne_reponse     - str
+#
+#   - poser()     -> bool (est-elle vraie ou fausse ?)
+# 
+#   Questionnaire
+#    - questions          - (Question)
+#    - lancer()
 
 def demander_reponse_numerique_utlisateur(min, max):
     reponse_str = input("Votre réponse (entre " + str(min) + " et " + str(max) + ") :")
