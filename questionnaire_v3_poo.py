@@ -32,7 +32,7 @@ class Question:
 
         print()
         resultat_response_correcte = False
-        reponse_int = Question.demander_reponse_numerique_utlisateur(1, len(self.choix))
+        reponse_int = Question.demander_reponse_numerique_utilisateur(1, len(self.choix))
         if self.choix[reponse_int-1].lower() == self.bonne_reponse.lower():
             print("Bonne réponse")
             resultat_response_correcte = True
@@ -43,12 +43,7 @@ class Question:
         return resultat_response_correcte
 
 
-        # rep_user = input(self.titre)
-        # if rep_user == self.bonne_reponse:
-        #     return True
-        # return False
-
-    def demander_reponse_numerique_utlisateur(min, max):
+    def demander_reponse_numerique_utilisateur(min, max):
         reponse_str = input("Votre réponse (entre " + str(min) + " et " + str(max) + ") :")
         try:
             reponse_int = int(reponse_str)
@@ -58,47 +53,33 @@ class Question:
             print("ERREUR : Vous devez rentrer un nombre entre", min, "et", max)
         except:
             print("ERREUR : Veuillez rentrer uniquement des chiffres")
-        return demander_reponse_numerique_utlisateur(min, max)
+        return demander_reponse_numerique_utilisateur(min, max)
         
 
-'''
-titre = question[0]
-choix = question[1]
-bonne_reponse = question[2]
-'''
-def poser_question(question):
-    # titre_question, r1, r2, r3, r4, choix_bonne_reponse
-    choix = question[1]
-    bonne_reponse = question[2]
-    print("QUESTION")
-    print("  " + question[0])
-    
+class Questionnaire():
+    def __init__(self, questions):
+        self.questions = questions
 
-'''
-    questionnaire[]
-        question
-            titre = "Quelle est la capitale de la France ?"
-            reponses = ("Marseille", "Nice", "Paris", "Nantes")
-            bonne_reponse = "Paris"
+    def lancer(self):
+        score = 0
+        for question in self.questions:
+            if question.poser():
+                score += 1
+        print("Score final :", score, "sur", len(self.questions))
 
-'''
 
-def lancer_questionnaire(questionnaire):
-    score = 0
-    for question in questionnaire:
-        if poser_question(question):
-            score += 1
-    print("Score final :", score, "sur", len(questionnaire))
 
-questionnaire = (
-    ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
-    ("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
-    ("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
+questions = (
+    Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
+    Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
+    Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
                 )
 
 #lancer_questionnaire(questionnaire)
 
-q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
-q1.poser()
+# q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
+# q1.poser()
 
+questionnaire = Questionnaire(questions)
+questionnaire.lancer()
 
