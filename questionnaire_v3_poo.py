@@ -18,6 +18,18 @@
 #    - questions          - (Question)
 #    - lancer()
 
+class Question:
+    def __init__(self, titre: str, choix: (str), bonne_reponse: str):
+        self.titre = titre
+        self.choix = choix
+        self.bonne_reponse = bonne_reponse
+
+    def poser(self):
+        rep_user = input(self.titre)
+        if rep_user == self.bonne_reponse:
+            return True
+        return False
+
 def demander_reponse_numerique_utlisateur(min, max):
     reponse_str = input("Votre réponse (entre " + str(min) + " et " + str(max) + ") :")
     try:
@@ -80,6 +92,9 @@ questionnaire = (
     ("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
                 )
 
-lancer_questionnaire(questionnaire)
+#lancer_questionnaire(questionnaire)
+
+q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
+q1.poser()
 
 
